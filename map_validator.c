@@ -6,52 +6,18 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:46:43 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/03 23:09:16 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/04 18:43:15 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
 
-void	check_dem(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (s[i] != '\n')
-	{
-		while (s[i])
-		{
-			if (s[i] == '\n' && s[i +1] == '\n')
-			{
-				ft_error(4);
-			}
-			i++;
-		}
-		if (s[i] == '\0' && s[i -1] == '\n')
-		{
-			ft_error(4);
-		}
-	}
-	else
-		ft_error(4);
-}
-
-void	first_check(char *s)
-{
-	if (!strstr(s, ".ber") || ft_strlen(strstr(s, ".ber")) != 4)
-	{
-		ft_error(1);
-	}
-}
-
-char	*	empty_check(char *s, t_mem *mem)
+char	*empty_check(char *s, t_mem *mem)
 {
 	char	*line;
 	char	*tmp;
-	char	*c;
 	int		fd;
-	(void)c;
-	(void)mem;
+
 	line = NULL;
 	tmp = NULL;
 	first_check(s);
@@ -63,10 +29,9 @@ char	*	empty_check(char *s, t_mem *mem)
 		ft_error(2);
 	while (line)
 	{
-		tmp = ft_strjoin(tmp, line,mem);
-		c = line;
+		mem->garbage[mem->num++] = line;
+		tmp = ft_strjoin(tmp, line, mem);
 		line = get_next_line(fd);
-		// free(c);
 	}
 	check_dem(tmp);
 	return (tmp);
@@ -104,29 +69,28 @@ char	**check_ar(char *s)
 	int		len;
 
 	i = -1;
-	j = 0;
+	j = -1;
 	len = 0;
 	map = ft_split(s, '\n');
 	while (map[++i])
 	{
-		while (map[i][j])
+		while (map[i][++j])
 		{
 			if (map[i][j] != '0' && map[i][j] != '1' &&
 			map[i][j] != 'P' && map[i][j] != 'C' && map[i][j] != 'E' )
 				ft_error(3);
-			j++;
 			if (i == 0)
-				len = j;
+				len = j +1;
 		}
 		if (j != len)
 			ft_error(4);
-		j = 0;
+		j = -1;
 	}
 	check_wall_b(map, i, len);
 	return (map);
 }
 
-void nbr_arg(char **map)
+void	nbr_arg(char **map)
 {
 	int		i;
 	int		j;
@@ -155,7 +119,7 @@ void nbr_arg(char **map)
 		ft_error(3);
 }
 
-void check_wall_a(char **map)
+void	check_wall_a(char **map)
 {
 	int	i;
 	int	j;
@@ -177,18 +141,4 @@ void check_wall_a(char **map)
 		j = 0;
 		i++;
 	}
-}
-char	**track_track(char	*s)
-{
-	t_mem * memo;
-	memo = calloc(sizeof(t_mem),MAX);
-	char *p;
-	char **map;
-	map = NULL;
-	p = empty_check(s,memo);
-	map = check_ar(p);
-	nbr_arg(map);
-	check_wall_a(map);
-	my_free(memo);
-	return(map);
 }

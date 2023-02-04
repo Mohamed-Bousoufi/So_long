@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:54:53 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/03 23:06:14 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/04 18:44:18 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2,t_mem*	mem)
+char	*ft_strjoin(char *s1, char *s2, t_mem *mem)
 {
 	size_t	s1len;
 	size_t	s2len;
@@ -32,11 +32,11 @@ char	*ft_strjoin(char *s1, char *s2,t_mem*	mem)
 	int		j;
 
 	if (!s1)
-		return((char *)s2);
+		return ((char *)s2);
 	j = -1;
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-		ptr = (char *)my_malloc(s2len + s1len + 1,mem);
+	ptr = (char *)my_malloc(s2len + s1len + 1, mem);
 	if (!ptr)
 		return (NULL);
 	while (++j < (int)s1len)
@@ -99,6 +99,8 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
 	p = (char *)malloc(ft_strlen(s1) + 1);
 	if (!p)
 		return (0);
@@ -109,19 +111,4 @@ char	*ft_strdup(const char *s1)
 	}
 	p[i] = 0;
 	return (p);
-}
-
-char	*ft_strstr(char *h, char *n)
-{
-	int		i;
-
-	i = -1;
-	if (n[0] == '\0' || h[0] == '\0')
-		return (NULL);
-	while (h[++i])
-	{
-		if (ft_strncmp(&h[i], n, ft_strlen(n)) == 0)
-			return (&h[i]);
-	}
-	return (NULL);
 }
