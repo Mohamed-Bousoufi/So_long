@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:45 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/04 23:13:28 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:03:56 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ void	move_up(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			ft_printf("\n%d\n",data->map->col);
+			ft_printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y - 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
 		{
-			mlx_destroy_window(data->mlx_ptr,data->win_ptr);
+			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 			double_f(data->map->m);
 			my_free(data->mem);
 			ft_printf("YOU WIN");
@@ -77,12 +77,12 @@ void	move_down(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n",data->map->col);
+			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y + 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
 		{
-			mlx_destroy_window(data->mlx_ptr,data->win_ptr);
+			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 			double_f(data->map->m);
 			my_free(data->mem);
 			ft_printf("YOU WIN");
@@ -106,12 +106,12 @@ void	move_left(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n",data->map->col);
+			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x -1]
 		== 'E' && data->map->col == 0)
 		{
-			mlx_destroy_window(data->mlx_ptr,data->win_ptr);
+			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 			double_f(data->map->m);
 			my_free(data->mem);
 			ft_printf("YOU WIN");
@@ -135,12 +135,12 @@ void	move_right(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n",data->map->col);
+			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x +1]
 		== 'E' && data->map->col == 0)
 		{
-			mlx_destroy_window(data->mlx_ptr,data->win_ptr);
+			mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 			double_f(data->map->m);
 			my_free(data->mem);
 			ft_printf("YOU WIN");

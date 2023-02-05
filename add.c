@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:06:03 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/04 21:31:36 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:06:24 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	*send_image(t_data *data, char c)
 		img = data->img->c;
 	if (c == 'P')
 		img = data->img->p;
-	if (c == 'E')
+	if (c == 'E' && data->map->col != 0)
 		img = data->img->e;
+	if (c == 'E' && data->map->col == 0)
+		img = data->img->eo;
 	return (img);
 }
 

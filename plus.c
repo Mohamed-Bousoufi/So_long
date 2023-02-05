@@ -6,11 +6,12 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/04 18:41:42 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:21:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
+#include "so_long.h"
 
 char	**track_track(char	*s)
 {
@@ -66,4 +67,12 @@ void	check_col(char **map)
 	check_c(map);
 	exist(map);
 	double_f(map);
+}
+
+int	exit_by(t_data *data)
+{
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+	double_f(data->map->m);
+	my_free(data->mem);
+	exit(0);
 }

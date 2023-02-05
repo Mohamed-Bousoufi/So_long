@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:41:15 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/04 21:13:14 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:21:42 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_images
 	void	*p;
 	void	*e;
 	void	*c;
+	void	*eo;
 }t_images;
 typedef struct s_xpm
 {
@@ -67,4 +68,5 @@ void	data_init(t_data *data, t_map *map, t_xmp *xmp, t_images *img);
 int		key(int keycode, t_data *data);
 void	*send_image(t_data *data, char c);
 void	num_col(t_data *data);
+int		exit_by(t_data *data);
 #endif

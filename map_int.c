@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/04 22:43:35 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:22:06 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	*get_image(t_data *data, char c)
 		img_ptr = player(data);
 	if (c == 'E')
 		img_ptr = ext(data);
+	if (!data->img->g)
+		ground(data);
 	return (img_ptr);
 }
 
@@ -76,21 +78,27 @@ void	draw_map(t_data *data, t_map *map)
 int	key(int keycode, t_data *data)
 {
 	find_p(data->map);
-	if (keycode == 126)
+	if (keycode == 126 || keycode == 13)
 		move_up(data);
-	else if (keycode == 125)
+	else if (keycode == 125 || keycode == 1)
 		move_down(data);
-	else if (keycode == 124)
+	else if (keycode == 124 || keycode == 2)
 		move_right(data);
-	else if (keycode == 123)
+	else if (keycode == 123 || keycode == 0)
 		move_left(data);
-	else
+	else if (keycode == 53)
 	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		draw_map(data, data->map);
+		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		double_f(data->map->m);
+		my_free(data->mem);
+		exit(0);
 	}
 	return (0);
 }
+// void leak(void)
+// {
+// 	system("leaks so_long");
+// }
 
 int	main(int argc, char **argv)
 {
@@ -116,7 +124,7 @@ int	main(int argc, char **argv)
 		num_col(data);
 		draw_map(data, map);
 		mlx_hook(data->win_ptr, 2, 0, &key, data);
-		// system("leaks so_long");
+		mlx_hook(data->win_ptr, 17, 1L, &exit_by, data);
 		mlx_loop(data->mlx_ptr);
 	}
 }

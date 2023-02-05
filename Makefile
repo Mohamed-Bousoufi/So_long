@@ -1,7 +1,7 @@
 NAME = so_long
 CC = gcc 
-CFLAGS =-Wall -Wextra -Werror
-AR = cc -lmlx -framework Appkit -framework OpenGl
+CFLAGS =-Wall -Wextra -Werror -fsanitize=address,integer,undefined
+AR = cc -lmlx -framework Appkit -framework OpenGl  -fsanitize=address,integer
 MAP_H = map/map.h
 SO_LONG = so_long.h
 FILES =	map_int.c split.c ft_error.c utils.c map_validator.c plus.c\
