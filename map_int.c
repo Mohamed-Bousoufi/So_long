@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 20:22:06 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:34:47 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,11 @@ int	main(int argc, char **argv)
 	t_images	*img;
 
 	mem = calloc(sizeof(t_mem), MAX);
+	if (!mem)
+	{
+		perror("Error\nMemory Problem");
+		exit(1);
+	}
 	data = my_malloc(sizeof(t_data), mem);
 	xmp = my_malloc(sizeof(t_xmp), mem);
 	map = my_malloc(sizeof(t_map), mem);
@@ -117,14 +122,8 @@ int	main(int argc, char **argv)
 	data->mem = mem;
 	if (argc == 2)
 	{
-		data->mlx_ptr = mlx_init();
-		dimension(argv[1], map);
-		data->win_ptr = mlx_new_window(data->mlx_ptr, 50 * map->wid,
-				50 * map->hght, "WOW");
-		num_col(data);
-		draw_map(data, map);
-		mlx_hook(data->win_ptr, 2, 0, &key, data);
-		mlx_hook(data->win_ptr, 17, 1L, &exit_by, data);
-		mlx_loop(data->mlx_ptr);
+		so_long(data, argv[1]);
 	}
+	else
+		perror("Error\nArgument Not Correct Must be => ./So_long map");
 }

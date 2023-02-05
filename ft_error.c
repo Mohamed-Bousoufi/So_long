@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:47:09 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 18:05:22 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:40:09 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ void	*my_malloc(size_t size, t_mem *mem)
 
 	ptr = calloc(1, size);
 	if (!ptr)
+	{
+		my_free(mem);
 		perror("memory_problem");
+		exit(1);
+	}
 	mem->garbage[mem->num++] = ptr;
 	return (ptr);
 }

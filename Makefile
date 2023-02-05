@@ -5,7 +5,7 @@ AR = cc -lmlx -framework Appkit -framework OpenGl  -fsanitize=address,integer
 MAP_H = map/map.h
 SO_LONG = so_long.h
 FILES =	map_int.c split.c ft_error.c utils.c map_validator.c plus.c\
-		collictbles.c moves.c map_int.c get_next_line.c imges.c add.c\
+		collictbles.c moves.c map_int.c get_next_line.c imges.c add.c so_long.c\
 		ft_print/ft_printf.c ft_print/ft_printf_nbrutils.c ft_print/ft_printf_utilities.c
 
 OBJS =$(FILES:.c=.o)

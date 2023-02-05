@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:41:15 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 20:21:42 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/05 22:25:15 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,7 @@ int		key(int keycode, t_data *data);
 void	*send_image(t_data *data, char c);
 void	num_col(t_data *data);
 int		exit_by(t_data *data);
+void	so_long(t_data *data, char *s);
+void	dimension(char *s, t_map *map);
+void	draw_map(t_data *data, t_map *map);
 #endif
