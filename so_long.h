@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:41:15 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 22:25:15 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:45:35 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "mlx.h"
-# include "map.h"
+# include "mandatory/map.h"
 # include "ft_print/ft_printf.h"
 
 typedef struct s_map

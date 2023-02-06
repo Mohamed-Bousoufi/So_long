@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 22:34:47 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:25:08 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	*get_image(t_data *data, char c)
 {
@@ -100,30 +100,4 @@ int	key(int keycode, t_data *data)
 // 	system("leaks so_long");
 // }
 
-int	main(int argc, char **argv)
-{
-	t_mem		*mem;
-	t_data		*data;
-	t_map		*map;
-	t_xmp		*xmp;
-	t_images	*img;
 
-	mem = calloc(sizeof(t_mem), MAX);
-	if (!mem)
-	{
-		perror("Error\nMemory Problem");
-		exit(1);
-	}
-	data = my_malloc(sizeof(t_data), mem);
-	xmp = my_malloc(sizeof(t_xmp), mem);
-	map = my_malloc(sizeof(t_map), mem);
-	img = my_malloc(sizeof(t_images), mem);
-	data_init(data, map, xmp, img);
-	data->mem = mem;
-	if (argc == 2)
-	{
-		so_long(data, argv[1]);
-	}
-	else
-		perror("Error\nArgument Not Correct Must be => ./So_long map");
-}

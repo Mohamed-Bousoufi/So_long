@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:45 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 20:03:56 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 14:15:21 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	magic(t_data *data)
 {
@@ -48,7 +48,6 @@ void	move_up(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			ft_printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y - 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
@@ -77,7 +76,6 @@ void	move_down(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y + 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
@@ -106,7 +104,6 @@ void	move_left(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x -1]
 		== 'E' && data->map->col == 0)
@@ -135,7 +132,6 @@ void	move_right(t_data *data)
 			magic(data);
 			data->moves++;
 			ft_printf("\nnombres de moves :%d\n", data->moves);
-			printf("\n%d\n", data->map->col);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x +1]
 		== 'E' && data->map->col == 0)

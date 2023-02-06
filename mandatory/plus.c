@@ -6,12 +6,12 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 22:46:20 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:45:09 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
-#include "so_long.h"
+#include "../so_long.h"
 
 char	**track_track(char	*s)
 {

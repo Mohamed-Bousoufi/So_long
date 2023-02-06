@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 17:06:03 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 22:38:09 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:44:36 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	xpm_check(t_data *data, char *s, t_xmp *xmp)
 {

@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:38:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/05 20:01:40 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:44:51 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	*wall(t_data *data)
 {
