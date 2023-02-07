@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 20:39:29 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:33:37 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 #include "map.h"
 
 void	so_long(t_data *data, char *s)
@@ -31,10 +31,18 @@ void	so_long(t_data *data, char *s)
 	}
 	num_col(data);
 	draw_map(data, data->map);
+	put_string(data);
+	mlx_loop_hook(data->mlx_ptr, &genrate, data);
 	mlx_hook(data->win_ptr, 2, 0, &key, data);
 	mlx_hook(data->win_ptr, 17, 1L, &exit_by, data);
 	mlx_loop(data->mlx_ptr);
 }
+
+// void	leak(void)
+// {
+// 	system("leaks so_long");
+// }
+
 int	main(int argc, char **argv)
 {
 	t_mem		*mem;
@@ -49,6 +57,7 @@ int	main(int argc, char **argv)
 		perror("Error\nMemory Problem");
 		exit(1);
 	}
+	// atexit(leak);
 	data = my_malloc(sizeof(t_data), mem);
 	xmp = my_malloc(sizeof(t_xmp), mem);
 	map = my_malloc(sizeof(t_map), mem);

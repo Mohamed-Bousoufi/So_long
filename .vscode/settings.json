@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.excalidraw": "json",
+        "*.excalidrawlib": "json",
+        "__config": "c",
+        "__hash_table": "c",
+        "__node_handle": "c",
+        "cstdlib": "c",
+        "map": "c",
+        "optional": "c",
+        "unordered_map": "c",
+        "map.h": "c",
+        "so_long_bonus.h": "c"
+    }
+}

@@ -6,11 +6,11 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 17:01:49 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:32:46 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../so_long_bonus.h"
 
 void	*get_image(t_data *data, char c)
 {
@@ -26,6 +26,8 @@ void	*get_image(t_data *data, char c)
 		img_ptr = player(data);
 	if (c == 'E')
 		img_ptr = ext(data);
+	if (c == 'N')
+		img_ptr = enemy(data);
 	if (!data->img->g)
 		ground(data);
 	return (img_ptr);
@@ -95,9 +97,6 @@ int	key(int keycode, t_data *data)
 	}
 	return (0);
 }
-// void leak(void)
-// {
-// 	system("leaks so_long");
-// }
+
 
 
