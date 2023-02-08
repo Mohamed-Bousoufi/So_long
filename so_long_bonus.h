@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:40:03 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 15:52:45 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:53:34 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,5 @@ char	*ft_itoa(int n);
 void	col_animation(t_data *data, char *s);
 int		genrate_col(t_data *data);
 void	redraw_col(t_data *data, int i, int j, char *s);
+void	*ft_calloc(size_t count, size_t size);
 #endif

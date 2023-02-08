@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:52:48 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:56:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,5 @@ int	main(int argc, char **argv)
 		so_long(data, argv[1]);
 	}
 	else
-		atexit(leak);
-	perror("Error\nArgument Not Correct Must be => ./So_long map");
+		perror("Error\nArgument Not Correct Must be => ./So_long map");
 }

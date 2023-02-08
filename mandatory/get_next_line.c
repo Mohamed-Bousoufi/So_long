@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 16:05:38 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 13:44:48 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:52:37 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,23 @@ int	removeline(char *str)
 		start++;
 	}
 	return (x);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	size_t	i;
+	char	*p;
+
+	i = 0;
+	p = malloc(size * count);
+	if (!p)
+		return (NULL);
+	while (i < (size * count))
+	{
+		p[i] = '\0';
+		i++;
+	}
+	return ((void *)p);
 }
 
 char	*get_next_line(int fd)

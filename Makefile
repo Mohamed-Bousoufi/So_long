@@ -1,8 +1,8 @@
 NAME = so_long
 NAME_B = so_long_bonus
 CC = gcc 
-CFLAGS =-Wall -Wextra -Werror #-fsanitize=address,integer,undefined
-AR = -lmlx -framework Appkit -framework OpenGl  #-fsanitize=address,integer
+CFLAGS =-Wall -Wextra -Werror -fsanitize=address,integer,undefined
+AR = -lmlx -framework Appkit -framework OpenGl  -fsanitize=address,integer
 MAP_H = mandatory/map.h
 MAP_H_BONUS = bonus/map.h
 SO_LONG = so_long.h

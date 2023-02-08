@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:41:15 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 15:51:32 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:52:50 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ int		exit_by(t_data *data);
 void	so_long(t_data *data, char *s);
 void	dimension(char *s, t_map *map);
 void	draw_map(t_data *data, t_map *map);
+void	*ft_calloc(size_t count, size_t size);
 #endif

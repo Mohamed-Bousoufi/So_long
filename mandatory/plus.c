@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 13:45:09 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 22:54:22 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**track_track(char	*s)
 	char	**map;
 
 	map = NULL;
-	memo = calloc(sizeof(t_mem), MAX);
+	memo = ft_calloc(sizeof(t_mem), MAX);
 	if (!memo)
 	{
 		perror("Error\n Memory probleme");
