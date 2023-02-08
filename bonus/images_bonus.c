@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:36:59 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/07 14:27:47 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:45:15 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*enemy(t_data *data)
 	return (img_ptr);
 }
 
-void end(t_data *data, int n)
+void	end(t_data *data, int n)
 {
 	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	double_f(data->map->m);

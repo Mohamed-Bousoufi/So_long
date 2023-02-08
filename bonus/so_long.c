@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/07 18:33:37 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:52:48 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	so_long(t_data *data, char *s)
 	mlx_loop(data->mlx_ptr);
 }
 
-// void	leak(void)
-// {
-// 	system("leaks so_long");
-// }
+void	leak(void)
+{
+	system("leaks so_long");
+}
 
 int	main(int argc, char **argv)
 {
@@ -51,23 +51,23 @@ int	main(int argc, char **argv)
 	t_xmp		*xmp;
 	t_images	*img;
 
-	mem = calloc(sizeof(t_mem), MAX);
-	if (!mem)
-	{
-		perror("Error\nMemory Problem");
-		exit(1);
-	}
-	// atexit(leak);
-	data = my_malloc(sizeof(t_data), mem);
-	xmp = my_malloc(sizeof(t_xmp), mem);
-	map = my_malloc(sizeof(t_map), mem);
-	img = my_malloc(sizeof(t_images), mem);
-	data_init(data, map, xmp, img);
-	data->mem = mem;
 	if (argc == 2)
 	{
+	mem = calloc(sizeof(t_mem), MAX);
+		if (!mem)
+		{
+			perror("Error\nMemory Problem");
+			exit(1);
+		}
+		data = my_malloc(sizeof(t_data), mem);
+		xmp = my_malloc(sizeof(t_xmp), mem);
+		map = my_malloc(sizeof(t_map), mem);
+		img = my_malloc(sizeof(t_images), mem);
+		data_init(data, map, xmp, img);
+	data->mem = mem;
 		so_long(data, argv[1]);
 	}
 	else
-		perror("Error\nArgument Not Correct Must be => ./So_long map");
+		atexit(leak);
+	perror("Error\nArgument Not Correct Must be => ./So_long map");
 }

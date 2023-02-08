@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:46:43 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 18:05:32 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:51:05 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*empty_check(char *s, t_mem *mem)
 	line = NULL;
 	tmp = NULL;
 	first_check(s);
-	fd = open(s, O_RDONLY, 0777);
+	fd = open(s, O_RDONLY);
 	if (fd == -1)
 		ft_error(2);
 	line = get_next_line(fd);
@@ -34,6 +34,7 @@ char	*empty_check(char *s, t_mem *mem)
 		line = get_next_line(fd);
 	}
 	check_dem(tmp);
+	close(fd);
 	return (tmp);
 }
 
@@ -101,11 +102,10 @@ void	nbr_arg(char **map)
 	com.arg_p = 0;
 	com.arg_e = 0;
 	com.arg_c = 0;
-
 	while (map[++i])
 	{
-		j = 0;
-		while (map[i][j])
+		j = -1;
+		while (map[i][++j])
 		{
 			if (map[i][j] == 'P')
 				com.arg_p += 1;
@@ -115,7 +115,6 @@ void	nbr_arg(char **map)
 				com.arg_c += 1;
 			if (map[i][j] == 'N')
 				com.arg_n += 1;
-			j++;
 		}
 	}
 	if (com.arg_p != 1 || com.arg_e != 1 || com.arg_c < 1 || com.arg_n < 1)

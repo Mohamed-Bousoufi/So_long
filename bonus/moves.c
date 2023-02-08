@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:45 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/07 17:19:25 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:52:27 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,5 @@ void	move_right(t_data *data)
 		else if (data->map->m[data->map->p_y][data->map->p_x +1]
 			== 'E' && data->map->col == 0)
 			end(data, 0);
-
 	}
 }

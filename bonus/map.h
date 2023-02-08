@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:27:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/07 13:54:02 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:47:20 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_num
 	int	arg_p;
 	int	arg_e;
 	int	arg_c;
-	int arg_n;
+	int	arg_n;
 }	t_num;
 
 typedef struct s_mem

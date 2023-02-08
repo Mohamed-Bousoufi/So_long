@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 17:01:49 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:58:42 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,3 @@ int	key(int keycode, t_data *data)
 // {
 // 	system("leaks so_long");
 // }
-
-

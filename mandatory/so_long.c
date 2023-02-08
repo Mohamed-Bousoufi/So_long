@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 20:39:29 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:59:24 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	so_long(t_data *data, char *s)
 	mlx_hook(data->win_ptr, 17, 1L, &exit_by, data);
 	mlx_loop(data->mlx_ptr);
 }
+
 int	main(int argc, char **argv)
 {
 	t_mem		*mem;
@@ -43,20 +44,20 @@ int	main(int argc, char **argv)
 	t_xmp		*xmp;
 	t_images	*img;
 
-	mem = calloc(sizeof(t_mem), MAX);
-	if (!mem)
-	{
-		perror("Error\nMemory Problem");
-		exit(1);
-	}
-	data = my_malloc(sizeof(t_data), mem);
-	xmp = my_malloc(sizeof(t_xmp), mem);
-	map = my_malloc(sizeof(t_map), mem);
-	img = my_malloc(sizeof(t_images), mem);
-	data_init(data, map, xmp, img);
-	data->mem = mem;
 	if (argc == 2)
 	{
+		mem = calloc(sizeof(t_mem), MAX);
+		if (!mem)
+		{
+			perror("Error\nMemory Problem");
+			exit(1);
+		}
+		data = my_malloc(sizeof(t_data), mem);
+		xmp = my_malloc(sizeof(t_xmp), mem);
+		map = my_malloc(sizeof(t_map), mem);
+		img = my_malloc(sizeof(t_images), mem);
+		data_init(data, map, xmp, img);
+		data->mem = mem;
 		so_long(data, argv[1]);
 	}
 	else
