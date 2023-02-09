@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:40:03 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 22:53:34 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:28:43 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "mlx.h"
 # include "bonus/map.h"
 # include "ft_print/ft_printf.h"
-# include <string.h>
-# include <math.h>
 
 typedef struct s_map
 {

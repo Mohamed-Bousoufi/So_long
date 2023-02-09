@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:46:43 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 23:26:32 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:18:40 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,29 +95,27 @@ void	nbr_arg(char **map, t_mem *mem)
 {
 	int		i;
 	int		j;
-	t_num	com;
+	t_num	*com;
 
+	com = my_malloc(sizeof(t_num), mem);
 	i = -1;
-	com.arg_n = 0;
-	com.arg_p = 0;
-	com.arg_e = 0;
-	com.arg_c = 0;
+	arg_init(com);
 	while (map[++i])
 	{
 		j = -1;
 		while (map[i][++j])
 		{
 			if (map[i][j] == 'P')
-				com.arg_p += 1;
+				com->arg_p += 1;
 			if (map[i][j] == 'E')
-				com.arg_e += 1;
+				com->arg_e += 1;
 			if (map[i][j] == 'C')
-				com.arg_c += 1;
+				com->arg_c += 1;
 			if (map[i][j] == 'N')
-				com.arg_n += 1;
+				com->arg_n += 1;
 		}
 	}
-	if (com.arg_p != 1 || com.arg_e != 1 || com.arg_c < 1 || com.arg_n < 1)
+	if (com->arg_p != 1 || com->arg_e != 1 || com->arg_c < 1 || com->arg_n < 1)
 		ft_error(3, mem);
 }
 

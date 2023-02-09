@@ -6,11 +6,12 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 22:08:49 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:47:42 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:16:42 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long_bonus.h"
+#include "map.h"
 
 void	*get_image(t_data *data, char c)
 {
@@ -93,7 +94,18 @@ int	key(int keycode, t_data *data)
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 		double_f(data->map->m);
 		my_free(data->mem);
-		exit(0);
+		exit(1);
 	}
 	return (0);
+}
+
+void	arg_init(t_num *com)
+{
+	if (com)
+	{
+	com->arg_n = 0;
+	com->arg_p = 0;
+	com->arg_e = 0;
+	com->arg_c = 0;
+	}
 }

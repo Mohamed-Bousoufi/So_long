@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:22:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 13:44:41 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:20:20 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	exist(char **map)
 				if (map[i + 1][j] != '.' && map[i][j + 1] != '.' &&
 					map[i - 1][j] != '.' && map[i][j - 1] != '.')
 				{
+					double_f(map);
 					perror("Error\nNO_PATH_FROM_PLAYER_TO_EXIT");
 					exit(EXIT_FAILURE);
 				}

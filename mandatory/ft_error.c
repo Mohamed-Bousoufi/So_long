@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:47:09 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 14:30:58 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 13:21:54 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,33 +55,20 @@ void	my_free(t_mem *mem)
 	mem = NULL;
 }
 
-void	ft_error(int n)
+void	ft_error(int n, t_mem *mem)
 {
 	if (n == 1)
-	{
 		perror("Error\nber_File_Not_find");
-		exit(EXIT_FAILURE);
-	}
 	if (n == 2)
-	{
 		perror("Error\n empty_file");
-		exit(EXIT_FAILURE);
-	}
 	if (n == 3)
-	{
 		perror("Error\n map_argument_not_correct");
-		exit(errno);
-	}
 	if (n == 4)
-	{
 		perror("Error\n demnsion_of_map_not_correct(must_be_rectangle)");
-		exit(EXIT_FAILURE);
-	}
 	if (n == 5)
-	{
 		perror("Error\n map_not_sorounded_with_wall");
-		exit(EXIT_FAILURE);
-	}
+	my_free(mem);
+	exit(1);
 }
 
 char	*ft_strstr(char *h, char *n)

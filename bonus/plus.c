@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 23:24:22 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:09:26 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,3 @@ int	exit_by(t_data *data)
 	my_free(data->mem);
 	exit(0);
 }
-// int main (int argc ,char ** argv)
-// {
-// 	if(argc == 2)
-// 	{
-// 		track_track(argv[1]);
-// 	}
-// }

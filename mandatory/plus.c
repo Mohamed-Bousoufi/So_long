@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 22:54:22 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 13:55:41 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ char	**track_track(char	*s)
 		exit(1);
 	}
 	p = empty_check(s, memo);
-	map = check_ar(p);
-	nbr_arg(map);
-	check_wall_a(map);
+	map = check_ar(p, memo);
+	nbr_arg(map, memo);
+	check_wall_a(map, memo);
 	my_free(memo);
 	return (map);
 }
 
-void	check_dem(char *s)
+void	check_dem(char *s, t_mem *mem)
 {
 	int	i;
 
@@ -45,24 +45,24 @@ void	check_dem(char *s)
 		{
 			if (s[i] == '\n' && s[i +1] == '\n')
 			{
-				ft_error(4);
+				ft_error(4, mem);
 			}
 			i++;
 		}
 		if (s[i] == '\0' && s[i -1] == '\n')
 		{
-			ft_error(4);
+			ft_error(4, mem);
 		}
 	}
 	else
-		ft_error(4);
+		ft_error(4, mem);
 }
 
-void	first_check(char *s)
+void	first_check(char *s, t_mem *mem)
 {
 	if (!strstr(s, ".ber") || ft_strlen(strstr(s, ".ber")) != 4)
 	{
-		ft_error(1);
+		ft_error(1, mem);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 22:56:27 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:23:03 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	so_long(t_data *data, char *s)
 		exit(1);
 	}
 		data->win_ptr = mlx_new_window(data->mlx_ptr, 50 * data->map->wid,
-			50 * data->map->hght, "WOW");
+			50 * data->map->hght, "So_long");
 	if (!data->win_ptr)
 	{
 		perror("Mlx Error");
@@ -36,11 +36,6 @@ void	so_long(t_data *data, char *s)
 	mlx_hook(data->win_ptr, 2, 0, &key, data);
 	mlx_hook(data->win_ptr, 17, 1L, &exit_by, data);
 	mlx_loop(data->mlx_ptr);
-}
-
-void	leak(void)
-{
-	system("leaks so_long");
 }
 
 int	main(int argc, char **argv)

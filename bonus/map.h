@@ -6,19 +6,16 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:27:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 23:25:43 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:15:46 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
 
-# include <errno.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
-# include <limits.h>
-# include<stdio.h>
+# include <stdio.h>
 # include <fcntl.h>
 
 # define MAX	1000
@@ -72,4 +69,5 @@ void	exist(char **map);
 void	find_path(int x, int y, char **map);
 char	**check_path(int x, int y, char **map);
 char	**find_player(char **map);
+void	arg_init(t_num *com);
 #endif

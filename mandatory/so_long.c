@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:59:24 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/09 15:22:47 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	so_long(t_data *data, char *s)
 		exit(1);
 	}
 		data->win_ptr = mlx_new_window(data->mlx_ptr, 50 * data->map->wid,
-			50 * data->map->hght, "WOW");
+			50 * data->map->hght, "So_long");
 	if (!data->win_ptr)
 	{
 		perror("Mlx Error");
