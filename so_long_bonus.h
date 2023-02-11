@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:40:03 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 15:28:43 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 22:42:53 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,16 @@ void	dimension(char *s, t_map *map);
 void	draw_map(t_data *data, t_map *map);
 void	*enemy(t_data *data);
 void	put_string(t_data *data);
-void	redraw(t_data *data, int i, int j, char *s);
+// void	redraw(t_data *data, void *img, int x, int y);
 int		genrate(t_data *data);
 void	enemy_animation(t_data *data, char *s);
 void	end(t_data *data, int n);
 char	*ft_itoa(int n);
 void	col_animation(t_data *data, char *s);
-int		genrate_col(t_data *data);
 void	redraw_col(t_data *data, int i, int j, char *s);
 void	*ft_calloc(size_t count, size_t size);
+void	magic(t_data *data);
+void	col_animation(t_data *data, char *s);
+int		genrate_col(t_data *data);
+void	redraw_col(t_data *data, int i, int j, char *s);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:36:59 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:45:15 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 19:39:08 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*enemy(t_data *data)
 	void	*img_ptr;
 
 	img_ptr = NULL;
-	xpm_check(data, "images/1.xpm", data->xmp);
-		img_ptr = mlx_xpm_file_to_image(data->mlx_ptr, "images/1.xpm",
+	xpm_check(data, "images/enemy.xpm", data->xmp);
+		img_ptr = mlx_xpm_file_to_image(data->mlx_ptr, "images/enemy.xpm",
 			&data->xmp->widht, &data->xmp->hieght);
 			data->img->n = img_ptr;
 	return (img_ptr);

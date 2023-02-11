@@ -1,8 +1,8 @@
 NAME = so_long
 NAME_B = so_long_bonus
-CC = gcc 
-CFLAGS =-Wall -Wextra -Werror 
-AR = -lmlx -framework Appkit -framework OpenGl 
+CC = cc 
+CFLAGS =-Wall -Wextra -Werror
+AR = -lmlx -framework Appkit -framework OpenGl
 MAP_H = mandatory/map.h
 MAP_H_BONUS = bonus/map.h
 SO_LONG = so_long.h
@@ -12,9 +12,9 @@ FILES =	mandatory/map_int.c mandatory/split.c mandatory/ft_error.c mandatory/uti
 		ft_print/ft_printf.c ft_print/ft_printf_nbrutils.c ft_print/ft_printf_utilities.c
 
 BONUS_FILES = bonus/map_int.c bonus/split.c bonus/ft_error.c bonus/utils.c bonus/map_validator.c bonus/plus.c\
-		bonus/collictbles.c bonus/moves.c bonus/get_next_line.c bonus/imges.c bonus/add.c bonus/so_long.c bonus/images_bonus.c\
+		bonus/collictbles.c bonus/animation_col.c bonus/moves.c bonus/get_next_line.c bonus/imges.c bonus/add.c bonus/so_long.c bonus/images_bonus.c\
 		./ft_print/ft_printf.c ./ft_print/ft_printf_nbrutils.c ./ft_print/ft_printf_utilities.c bonus/animation.c\
-		bonus/itoa.c bonus/collictbles_animation.c
+		bonus/itoa.c
 
 OBJS =$(FILES:.c=.o)
 
@@ -40,4 +40,5 @@ fclean: clean
 	rm -f $(NAME) $(NAME_B)
 
 re: fclean all
-.PHONY : make clean fclean all
+
+.PHONY : clean fclean all

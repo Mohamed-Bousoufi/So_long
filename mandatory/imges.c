@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:38:39 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/06 13:44:51 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 20:33:20 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ void	*ext(t_data *data)
 	img_ptr = NULL;
 	xpm_check(data, "images/exit.xpm", data->xmp);
 	xpm_check(data, "images/exit1.xpm", data->xmp);
-		img_ptr = mlx_xpm_file_to_image(data->mlx_ptr, "images/exit.xpm",
+	img_ptr = mlx_xpm_file_to_image(data->mlx_ptr, "images/exit.xpm",
 			&data->xmp->widht, &data->xmp->hieght);
-		img_ptr1 = mlx_xpm_file_to_image(data->mlx_ptr, "images/exit1.xpm",
+	img_ptr1 = mlx_xpm_file_to_image(data->mlx_ptr, "images/exit1.xpm",
 			&data->xmp->widht, &data->xmp->hieght);
-					data->img->e = img_ptr;
-					data->img->eo = img_ptr1;
+	data->img->e = img_ptr;
+	data->img->eo = img_ptr1;
 	return (img_ptr);
 }

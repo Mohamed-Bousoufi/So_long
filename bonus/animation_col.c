@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collictbles_animation.c                            :+:      :+:    :+:   */
+/*   animation_col.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 22:06:26 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:44:54 by mbousouf         ###   ########.fr       */
+/*   Created: 2023/02/10 22:40:37 by mbousouf          #+#    #+#             */
+/*   Updated: 2023/02/10 22:47:03 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	col_animation(t_data *data, char *s)
 		{
 			if (data->map->m[i][j] == 'C')
 			{
-				redraw(data, i, j, s);
+				redraw_col(data, i, j, s);
 			}
 			j++;
 		}
@@ -68,4 +68,5 @@ void	redraw_col(t_data *data, int i, int j, char *s)
 			&data->xmp->widht, &data->xmp->hieght);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, \
 		img, j * 50, i * 50);
+	mlx_destroy_image(data->mlx_ptr, img);
 }

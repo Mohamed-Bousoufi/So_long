@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:14:45 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/08 16:52:27 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:25:30 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	magic(t_data *data)
 		}
 		i++;
 	}
+	put_string(data);
 }
 
 void	move_up(t_data *data)
@@ -48,7 +49,6 @@ void	move_up(t_data *data)
 			data->moves++;
 			mlx_clear_window(data->mlx_ptr, data->win_ptr);
 			magic(data);
-			put_string(data);
 		}
 		else if (data->map->m[data->map->p_y - 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
@@ -73,7 +73,6 @@ void	move_down(t_data *data)
 			data->moves++;
 			mlx_clear_window(data->mlx_ptr, data->win_ptr);
 			magic(data);
-			put_string(data);
 		}
 		else if (data->map->m[data->map->p_y + 1][data->map->p_x]
 		== 'E' && data->map->col == 0)
@@ -98,7 +97,6 @@ void	move_left(t_data *data)
 			data->moves++;
 			mlx_clear_window(data->mlx_ptr, data->win_ptr);
 			magic(data);
-			put_string(data);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x -1]
 		== 'E' && data->map->col == 0)
@@ -123,7 +121,6 @@ void	move_right(t_data *data)
 			data->moves++;
 			mlx_clear_window(data->mlx_ptr, data->win_ptr);
 			magic(data);
-			put_string(data);
 		}
 		else if (data->map->m[data->map->p_y][data->map->p_x +1] == 'N')
 			end (data, 1);

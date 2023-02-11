@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:36:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 13:55:41 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 22:29:58 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ char	**track_track(char	*s)
 		exit(1);
 	}
 	p = empty_check(s, memo);
-	map = check_ar(p, memo);
-	nbr_arg(map, memo);
-	check_wall_a(map, memo);
+	map = check_ar(p);
+	nbr_arg(map);
+	check_wall_a(map);
 	my_free(memo);
 	return (map);
 }
 
-void	check_dem(char *s, t_mem *mem)
+void	check_dem(char *s)
 {
 	int	i;
 
@@ -43,26 +43,22 @@ void	check_dem(char *s, t_mem *mem)
 	{
 		while (s[i])
 		{
-			if (s[i] == '\n' && s[i +1] == '\n')
-			{
-				ft_error(4, mem);
-			}
+			if (s[i] == '\n' && s[i + 1] == '\n')
+				ft_error(4);
 			i++;
 		}
-		if (s[i] == '\0' && s[i -1] == '\n')
-		{
-			ft_error(4, mem);
-		}
+		if (s[i] == '\0' && s[i - 1] == '\n')
+			ft_error(4);
 	}
 	else
-		ft_error(4, mem);
+		ft_error(4);
 }
 
-void	first_check(char *s, t_mem *mem)
+void	first_check(char *s)
 {
-	if (!strstr(s, ".ber") || ft_strlen(strstr(s, ".ber")) != 4)
+	if (!ft_strstr(s, ".ber") || ft_strlen(ft_strstr(s, ".ber")) != 4)
 	{
-		ft_error(1, mem);
+		ft_error(1);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 22:11:41 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 15:23:03 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:19:29 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-	mem = calloc(sizeof(t_mem), MAX);
+	mem = ft_calloc(sizeof(t_mem), MAX);
 		if (!mem)
 		{
 			perror("Error\nMemory Problem");

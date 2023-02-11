@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:22:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 15:20:43 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 16:19:44 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	exist(char **map)
 
 void	find_path(int x, int y, char **map)
 {
-	if (map[x][y] == 'C' || map[x][y] == '0' || map[x][y] == 'P')
+	if (map[x][y] == 'C' || map[x][y] == '0' || map[x][y] == 'P'
+	|| map[x][y] == 'N')
 	{
 		map[x][y] = '.';
 		find_path(x + 1, y, map);

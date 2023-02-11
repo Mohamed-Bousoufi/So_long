@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:46:43 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 13:22:27 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 20:17:48 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ char	*empty_check(char *s, t_mem *mem)
 
 	line = NULL;
 	tmp = NULL;
-	first_check(s, mem);
+	first_check(s);
 	fd = open(s, O_RDONLY);
 	if (fd == -1)
-		ft_error(2, mem);
+		ft_error(1);
 	line = get_next_line(fd);
 	if (!line)
-		ft_error(2, mem);
+		ft_error(2);
 	while (line)
 	{
 		mem->garbage[mem->num++] = line;
 		tmp = ft_strjoin(tmp, line, mem);
 		line = get_next_line(fd);
 	}
-	check_dem(tmp, mem);
+	check_dem(tmp);
 	close(fd);
 	return (tmp);
 }
 
-void	check_wall_b(char **map, int x, int y, t_mem *mem)
+void	check_wall_b(char **map, int x, int y)
 {
 	int	i;
 	int	j;
@@ -49,12 +49,12 @@ void	check_wall_b(char **map, int x, int y, t_mem *mem)
 	{
 		while (j < y)
 		{
-			if (i == x -1)
+			if (i == x - 1)
 				if (map[i][j] != '1')
-					ft_error(5, mem);
-			if (j == y -1)
+					ft_error(5);
+			if (j == y - 1)
 				if (map[i][j] != '1')
-					ft_error(5, mem);
+					ft_error(5);
 			j++;
 		}
 		j = 0;
@@ -62,7 +62,7 @@ void	check_wall_b(char **map, int x, int y, t_mem *mem)
 	}
 }
 
-char	**check_ar(char *s, t_mem *mem)
+char	**check_ar(char *s)
 {
 	char	**map;
 	int		i;
@@ -77,21 +77,21 @@ char	**check_ar(char *s, t_mem *mem)
 	{
 		while (map[i][++j])
 		{
-			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'N'
-			&& map[i][j] != 'P' && map[i][j] != 'C' && map[i][j] != 'E')
-				ft_error(3, mem);
+			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'P'
+			&& map[i][j] != 'C' && map[i][j] != 'E')
+				ft_error(3);
 			if (i == 0)
 				len = j +1;
 		}
 		if (j != len)
-			ft_error(4, mem);
+			ft_error(4);
 		j = -1;
 	}
-	check_wall_b(map, i, len, mem);
+	check_wall_b(map, i, len);
 	return (map);
 }
 
-void	nbr_arg(char **map, t_mem *mem)
+void	nbr_arg(char **map)
 {
 	int		i;
 	int		j;
@@ -115,10 +115,10 @@ void	nbr_arg(char **map, t_mem *mem)
 		}
 	}
 	if (com.arg_p != 1 || com.arg_e != 1 || com.arg_c < 1)
-		ft_error(3, mem);
+		ft_error(3);
 }
 
-void	check_wall_a(char **map, t_mem *mem)
+void	check_wall_a(char **map)
 {
 	int	i;
 	int	j;
@@ -131,10 +131,10 @@ void	check_wall_a(char **map, t_mem *mem)
 		{
 			if (i == 0)
 				if (map[i][j] != '1')
-					ft_error(5, mem);
+					ft_error(5);
 			if (j == 0)
 				if (map[i][j] != '1')
-					ft_error(5, mem);
+					ft_error(5);
 			j++;
 		}
 		j = 0;

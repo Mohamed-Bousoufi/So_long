@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:22:21 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 15:20:20 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 20:33:49 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	check_c(char **map)
 			if (map[i][j] == 'C')
 			{
 				perror("Error\n NOT_PATH_FROM_COL_TO_EXIT");
+				double_f(map);
 				exit(EXIT_FAILURE);
 			}
 			j++;

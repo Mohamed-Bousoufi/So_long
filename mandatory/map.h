@@ -6,17 +6,12 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:27:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 13:21:09 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 19:14:33 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
-
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -53,15 +48,14 @@ char	*ft_strstr(char *h, char *n);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
-void	ft_error(int n, t_mem *mem);
+void	ft_error(int n);
 void	double_f(char **map);
-void	check_dem(char *s, t_mem *mem);
-void	first_check(char *s, t_mem *mem);
-char	*empty_check(char *s, t_mem *mem);
-void	check_wall_b(char **map, int x, int y, t_mem *mem);
-char	**check_ar(char *s, t_mem *mem);
-void	nbr_arg(char **map, t_mem *mem);
-void	check_wall_a(char **map, t_mem *mem);
+void	check_dem(char *s);
+void	first_check(char *s);
+void	check_wall_b(char **map, int x, int y);
+char	**check_ar(char *s);
+void	nbr_arg(char **map);
+void	check_wall_a(char **map);
 char	**track_track(char *s);
 void	check_col(char **map);
 char	*empty_check(char *s, t_mem *mem);
@@ -73,4 +67,5 @@ void	exist(char **map);
 void	find_path(int x, int y, char **map);
 char	**check_path(int x, int y, char **map);
 char	**find_player(char **map);
+void	*ft_calloc(size_t count, size_t size);
 #endif

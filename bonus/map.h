@@ -6,7 +6,7 @@
 /*   By: mbousouf <mbousouf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 15:27:30 by mbousouf          #+#    #+#             */
-/*   Updated: 2023/02/09 14:15:46 by mbousouf         ###   ########.fr       */
+/*   Updated: 2023/02/10 19:52:26 by mbousouf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,14 @@ char	*ft_strstr(char *h, char *n);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(const char *s1);
-void	ft_error(int n, t_mem *mem);
+void	ft_error(int n);
 void	double_f(char **map);
-void	check_dem(char *s, t_mem *mem);
-void	first_check(char *s, t_mem *mem);
-char	*empty_check(char *s, t_mem *mem);
-void	check_wall_b(char **map, int x, int y, t_mem *mem);
-char	**check_ar(char *s, t_mem *mem);
+void	check_dem(char *s);
+void	first_check(char *s);
+void	check_wall_b(char **map, int x, int y);
+char	**check_ar(char *s);
 void	nbr_arg(char **map, t_mem *mem);
-void	check_wall_a(char **map, t_mem *mem);
+void	check_wall_a(char **map);
 char	**track_track(char *s);
 void	check_col(char **map);
 char	*empty_check(char *s, t_mem *mem);
@@ -70,4 +69,5 @@ void	find_path(int x, int y, char **map);
 char	**check_path(int x, int y, char **map);
 char	**find_player(char **map);
 void	arg_init(t_num *com);
+void	*ft_calloc(size_t count, size_t s);
 #endif
